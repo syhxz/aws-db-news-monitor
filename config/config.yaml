@@ -1,0 +1,158 @@
+# Configuration for AWS Database News Monitor
+
+# RSS Feed Settings
+rss:
+  url: "https://aws.amazon.com/about-aws/whats-new/recent/feed/"
+  timeout: 10
+  user_agent: "Mozilla/5.0 (compatible; AWS-DB-News-Monitor/1.0)"
+
+# Keywords for database-related content detection
+keywords:
+  database:
+    # AWS Database Services
+    - "rds"
+    - "aurora"
+    - "dynamodb" 
+    - "redshift"
+    - "neptune"
+    - "timestream"
+    - "documentdb"
+    - "elasticache"
+    - "memorydb"
+    - "keyspaces"
+    - "qldb"
+    - "quantum ledger"
+    - "cassandra"
+    - "mongodb"
+    - "opensearch"
+    - "elasticsearch"
+    
+    # Database Engines
+    - "mysql"
+    - "postgresql"
+    - "postgres"
+    - "mariadb" 
+    - "oracle"
+    - "sql server"
+    - "sqlite"
+    - "redis"
+    - "graph database"
+    
+    # Database Features
+    - "database"
+    - " db "
+    - "backup"
+    - "snapshot"
+    - "restore"
+    - "migration"
+    - "performance insights"
+    - "query performance"
+    - "indexing"
+    - "clustering"
+    - "replication"
+    - "read replica"
+    - "failover"
+    - "high availability"
+    - "encryption at rest"
+    - "encryption in transit"
+    - "database security"
+    
+    # Data Processing
+    - "data warehouse"
+    - "analytics"
+    - "olap"
+    - "oltp"
+    - "data lake"
+    - "streaming data"
+    - "real-time data"
+    - "batch processing"
+    - "etl"
+    - "data pipeline"
+    - "data integration"
+
+# Output Settings
+output:
+  directory: "."
+  log_file: "aws_db_monitor.log"
+  date_format: "%Y-%m-%d"
+  max_description_length: 500
+
+# Notification Configuration
+notification:
+  enabled: false
+  method: "webhook"  # Options: webhook, feishu, email
+  
+  # Webhook Configuration (e.g., Slack, Teams, Discord)
+  webhook_url: ""
+  
+  # Feishu Configuration
+  feishu:
+    target: ""  # User ID or group chat ID
+  
+  # Email Configuration
+  email:
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    username: ""
+    password: ""
+    from: ""
+    to: ""
+  
+  # Message Settings
+  message:
+    max_features: 3  # Number of features to include in summary
+    include_links: true
+    timezone: "UTC"
+
+# Analysis Settings
+analysis:
+  # Service identification patterns
+  services:
+    "Amazon RDS": ["rds", "relational database service"]
+    "Amazon Aurora": ["aurora"]
+    "Amazon DynamoDB": ["dynamodb"]
+    "Amazon Redshift": ["redshift"]
+    "Amazon Neptune": ["neptune"]
+    "Amazon Timestream": ["timestream"]
+    "Amazon DocumentDB": ["documentdb"]
+    "Amazon ElastiCache": ["elasticache"]
+    "Amazon MemoryDB": ["memorydb"]
+    "Amazon Keyspaces": ["keyspaces", "cassandra"]
+    "Amazon QLDB": ["qldb", "quantum ledger"]
+    "Amazon OpenSearch": ["opensearch", "elasticsearch"]
+  
+  # Feature categories
+  categories:
+    "Performance Optimization": ["performance", "optimization", "faster", "speed", "latency"]
+    "Backup & Recovery": ["backup", "snapshot", "restore", "recovery", "disaster"]
+    "Security": ["security", "encryption", "auth", "iam", "access"]
+    "Monitoring & Analytics": ["monitoring", "insights", "metrics", "logging", "observability"]
+    "Regional Expansion": ["region", "availability", "zone", "regional"]
+    "Version Update": ["version", "engine", "upgrade", "update"]
+    "Data Migration": ["migration", "import", "export", "transfer"]
+    "Auto Scaling": ["scaling", "auto-scaling", "elastic", "capacity"]
+  
+  # Use cases
+  use_cases:
+    "Data Analytics & BI": ["analytics", "warehouse", "olap", "business intelligence"]
+    "Real-time Data Processing": ["real-time", "streaming", "live data"]
+    "Web Applications": ["web", "application", "app", "online"]
+    "Enterprise Applications": ["enterprise", "mission-critical", "production"]
+    "IoT & Sensor Data": ["iot", "sensor", "telemetry", "device"]
+    "Gaming Applications": ["gaming", "game", "multiplayer"]
+    "Financial Services": ["financial", "fintech", "banking"]
+    "Compliance & Audit": ["compliance", "audit", "regulation"]
+
+# Rate Limiting and Retry Settings
+rate_limiting:
+  requests_per_minute: 60
+  retry_attempts: 3
+  retry_delay: 5  # seconds
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+  file_rotation: true
+  max_file_size: "10MB"
+  backup_count: 5

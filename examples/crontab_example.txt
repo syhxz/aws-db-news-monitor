@@ -1,0 +1,11 @@
+# Daily at 09:30 UTC - AWS Database News Monitor
+30 9 * * * /path/to/aws-db-news-monitor/scripts/daily_monitor.sh
+
+# Daily at 12:00 UTC - Alternative schedule  
+0 12 * * * /path/to/aws-db-news-monitor/scripts/daily_monitor.sh
+
+# Monday through Friday at 10:00 UTC - Weekdays only
+0 10 * * 1-5 /path/to/aws-db-news-monitor/scripts/daily_monitor.sh
+
+# Twice daily - 09:00 and 18:00 UTC
+0 9,18 * * * /path/to/aws-db-news-monitor/scripts/daily_monitor.sh
