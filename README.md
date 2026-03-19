@@ -20,7 +20,7 @@ An intelligent monitoring system for AWS database service announcements. Automat
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/aws-db-news-monitor.git
+git clone https://github.com/syhxz/aws-db-news-monitor.git
 cd aws-db-news-monitor
 
 # Install dependencies
@@ -176,6 +176,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 📋 [Issues](https://github.com/your-username/aws-db-news-monitor/issues)
+- 📋 [Issues](https://github.com/syhxz/aws-db-news-monitor/issues)
 - 📚 [Documentation](SKILL.md)
-- 💬 [Discussions](https://github.com/your-username/aws-db-news-monitor/discussions)
+- 💬 [Discussions](https://github.com/syhxz/aws-db-news-monitor/discussions)
